@@ -30,4 +30,47 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hola mundo"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: Hace 1 hora
+        other: Hace %{count} horas
+      about_x_months:
+        one: Hace 1 mes
+        other: Hace %{count} meses
+      about_x_years:
+        one: Hace 1 año
+        other: Hace %{count} años
+      almost_x_years:
+        one: Casi 1 año
+        other: Casi %{count} años
+      half_a_minute: Medio minuto
+      less_than_x_minutes:
+        one: Menos de un minuto
+        other: Menos de %{count} minutos
+      less_than_x_seconds:
+        one: Menos de 1 segundo
+        other: Menos de %{count} segundos
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 dia
+        other: "%{count} dias"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mes
+        other: "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Dia
+      hour: Hora
+      minute: Minuto
+      month: Mes
+      second: Segundos
+      year: Año
