@@ -1,29 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>Todos los estados</h1>
+</div>
 
-<h1>Statuses</h1>
+<!--TODO: Ciclo para imprimir la información dinámicamente de todos los status -->
+<% @statuses.each do |status| %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="status">
+    <strong><%= status.name %></strong>
+    <p><%= status.content %></p>
+    <div>
+      <%= link_to "Hace " + time_ago_in_words(status.created_at)  %>
+      <span class="admin"></span>
+      | <%= link_to "Editar", edit_status_path(status) %>
+      <%= link_to "Borrar", status, method: :delete, data: {confirm: "¿Estás seguro que quieres eliminar este estado?"} %>
+    </div>
+  </div>
 
-  <tbody>
-    <% @statuses.each do |status| %>
-      <tr>
-        <td><%= status.name %></td>
-        <td><%= status.content %></td>
-        <td><%= link_to 'Show', status %></td>
-        <td><%= link_to 'Edit', edit_status_path(status) %></td>
-        <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Status', new_status_path %>
+<% end %>
