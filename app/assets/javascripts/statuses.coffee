@@ -5,6 +5,9 @@
 # TODO: Declaración para indicar a jquery que se ejecute inmediatamente
 # Cuando en status se ejecute una acción de hover, ejecuta el evento para modificar
 # la clase, toggleClass() agrega y quita la clase
-$ ->
+
+$(document).on "turbolinks:load", ->
+  $ ->
     $('.status').hover (event) ->
         $(this).toggleClass("hover")
+
