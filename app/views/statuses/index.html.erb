@@ -9,10 +9,11 @@
     <strong><%= status.name %></strong>
     <p><%= status.content %></p>
     <div>
-      <%= link_to time_ago_in_words(status.created_at)  %>
-      <span class="admin"></span>
+      <%= link_to "Hace " + time_ago_in_words(status.created_at)  %>
+      <span class="admin">
       | <%= link_to "Editar", edit_status_path(status) %>
-      <%= link_to "Borrar", status, method: :delete, data: {confirm: "¿Estás seguro que quieres eliminar este estado?"} %>
+        <%= link_to "Borrar", status, method: :delete, data: {confirm: "¿Estás seguro que quieres eliminar este estado?"} %>
+      </span>
     </div>
   </div>
 
