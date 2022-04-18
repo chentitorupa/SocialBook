@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Webapp</title>
+    <title>SocialBook</title>
     <%= csrf_meta_tags %>
 
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
@@ -20,9 +20,18 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <%= link_to "Status", statuses_path , class: "nav-link", 'aria-current': "page" %>
+            <li class="nav-item">
+              <%= link_to "Status", statuses_path ,  class: "nav-link active"%>
             </li>
+          </ul>
+          <ul class="nav navbar-nav ml-auto">
+              <% if user_signed_in?  %>
+                  <li class="nav-item"><%= link_to current_user.full_name, edit_user_registration_path, class: "nav-link"%></li>
+                  <li class="nav-item"><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete , class: "nav-link"%></li>
+              <% else %>
+                  <li class="nav-item"><%= link_to "Registrar", new_user_registration_path, class: "nav-link" %></li>
+                  <li class="nav-item"><%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %></li>
+              <% end  %>
           </ul>
         </div>
 
