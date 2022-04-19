@@ -10,10 +10,19 @@ class User < ApplicationRecord
   # En plural el nombre del modelo
   has_many :statuses
 
-  def full_name
+  validates :first_name, presence: true
 
-       first_name + " " + last_name
-         
+  validates :last_name, presence: true
+
+  validates :nickname,  presence: true, 
+                        uniqueness: true,
+                        format:{
+                          with: /\A[a-zA-Z]+[0-9]*[_-]?\z/,
+                          message: "Debe estar formateado correctamente"
+                        }
+
+  def full_name
+      first_name + " " + last_name
   end
 
 end
