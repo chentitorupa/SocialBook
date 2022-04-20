@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  # Se utilizó el comando 'rake routes' para verificar las rutas de devise
+
   devise_scope :user do
     get 'registrar', to: 'devise/registrations#new', as: :registrar
     get 'iniciarSesion', to: 'devise/sessions#new', as: :iniciarSesion
