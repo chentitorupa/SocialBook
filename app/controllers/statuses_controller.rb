@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   # Si no hay usuario registrado se envia a registrarse.
-  before_filter :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_status, only: %i[ show edit update destroy ]
 
 

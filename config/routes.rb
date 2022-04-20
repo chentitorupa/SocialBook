@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'registrar', to: 'devise/registrations#new', as: :registrar
     get 'iniciarSesion', to: 'devise/sessions#new', as: :iniciarSesion
-    get 'cerrarSesion', to: 'devise/sessions#destroy', as: :cerrarSesion
+    delete 'cerrarSesion', to: 'devise/sessions#destroy', as: :cerrarSesion
   end
 
   resources :statuses

@@ -3,7 +3,7 @@ class Status < ApplicationRecord
     belongs_to :user
 
     validates :content, presence: true,
-                        lengt: { minimum: 2}
+                        length: { minimum: 2}
 
     validates :user_id, presence: true
 end
