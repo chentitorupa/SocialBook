@@ -6,15 +6,22 @@ class StatusesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get statuses_url
+    get :index
     assert_response :success
+    assert_not_nil assigns(:statuses)
   end
 
   test "debe ser redirigido cuando no ha iniciado sesion" do
-    get new_status_url
+    get :new
     assert_response :redirect
     assert_redirected_to new_user_session_path
 
+  end
+
+  test "debe inisiar sesion para hacer un post" do
+    post :create, status: {contenido: "Hola Mundo"}
+    assert_response :redirect
+    assert_redirected_to new_user_session_path
   end
 
   test "deberia mostrar la nueva pagina cuando inicio sesion" do
@@ -24,6 +31,7 @@ class StatusesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create status" do
+    sign_in users(:ojala)
     assert_difference('Status.count') do
       post statuses_url, params: { status: { content: @status.content} }
     end
