@@ -34,14 +34,14 @@ en:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: Hace 1 hora
+        one: 1 hora
         other: Hace %{count} horas
       about_x_months:
-        one: Hace 1 mes
+        one: 1 mes
         other: Hace %{count} meses
       about_x_years:
-        one: Hace 1 año
-        other: Hace %{count} años
+        one: 1 año
+        other: %{count} años
       almost_x_years:
         one: Casi 1 año
         other: Casi %{count} años
