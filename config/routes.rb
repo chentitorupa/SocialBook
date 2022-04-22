@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'perfil/show'
+
   devise_for :users
 
   # Se utilizó el comando 'rake routes' para verificar las rutas de devise

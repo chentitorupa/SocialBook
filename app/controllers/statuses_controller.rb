@@ -20,7 +20,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses/new
   def new
-    @status = Status.new
+    @status = Status.new()
   end
 
   # GET /statuses/1/edit
