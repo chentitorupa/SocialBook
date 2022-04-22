@@ -14,7 +14,7 @@
   <div class="container">
 
       <div class="input-group">
-        <%= f.input :user_id, collection: User.where('id == ?', current_user.id), label_method: :full_name %>
+        <%= f.input :user_id, collection: User.where('id = ?', current_user.id), label_method: :full_name %>
 
       </div>
 
